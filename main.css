@@ -1,54 +1,72 @@
-html {
-    background-color: #e6e9e9;
-    background-image: -webkit-linear-gradient(180deg,rgb(230,233,233) 0%,rgb(216,221,221) 100%);
-    background-image: linear-gradient(270deg,rgb(230,233,233) 0%,rgb(216,221,221) 100%);
-    -webkit-font-smoothing: antialiased;
+body{
+  background: #c4c7cb;
+  background-image: -webkit-radial-gradient(cover, #FFF,#D1D1D1	);
+  background-image: -moz-radial-gradient(cover, #e8eaec, #a4a8ae);
+  background-image: -o-radial-gradient(cover, #e8eaec, #a4a8ae);
+  background-image: radial-gradient(cover, #e8eaec, #a4a8ae)
 }
 
-body {
-    margin: auto;
-    padding: 1em 1em 1em 1em;
-    max-width: 95%;
-    max-height: 95%;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.2em;
-    line-height: 1.2em;
-    color: #545454;
-    background-color: #efefef;
+html{
+  min-height:100%;
 }
- 
 
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0.67em;
-    font-weight: bolder;
-    text-align: center;
-}
+
+
 
 nav {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-}
- 
-nav ul {
-    display: table-row;
-    margin: 0;
+	height: 50px;
     padding: 0;
-}
- 
-nav ul li {
-    list-style: none;
-    display: table-cell;
-    text-align: center;
-}
- 
-nav ul li a {
-    display: block;
+	margin: 0;
+	position: absolute;
 }
 
+nav li 	{
+	height: auto;
+	width: 15em;
+	float: left;
+	text-align: center;
+	list-style: none;
+	font:12px "Bonveno", "Century Gothic";
+	padding: 0;
+	margin: 0;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	box-shadow: 0 1px 0 rgba(255,255,255, .9) inset, 0 1px 3px rgba(0,0,0, .1);
+	border-radius: 3px;
+  margin-left:10px;
+}
 
+nav a{							
+	padding:13px;
+	text-decoration: none; 
+	color:#333;
+	text-shadow: 0 1px #fff;
+	display: block;
+}
+nav li ul{
+	display: none;
+	height: auto;									
+	margin-left: -11px;
+	padding: 0;
+}				
 
-    
+nav li:hover ul{
+	display: block;
+}
 
+nav li ul li {
+	background-color:#eee;
+  	border: 1px solid #ccc;
+} 
 
+nav li:hover, a:hover {
+	 background: #e8e8e8;
+} 
+
+h1 h2 h3 h4 {
+    font-family: 'Old Standard TT', serif;
+}
+
+p {
+   clear: both; 
+}
