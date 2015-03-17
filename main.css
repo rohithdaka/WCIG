@@ -10,30 +10,36 @@ html{
   min-height:100%;
 }
 
-
+h1 {
+    font-family: 'Old Standard TT';
+    font-weight: 900;
+    text-align: center;
+    margin:0.5em;
+    padding:0.5em;
+}
 
 
 nav {
-	height: 50px;
+	height: 0;
     padding: 0;
 	margin: 0;
-	position: absolute;
+	position: relative;
 }
 
 nav li 	{
 	height: auto;
-	width: 15em;
+	width: 12em;
 	float: left;
 	text-align: center;
 	list-style: none;
-	font:12px "Bonveno", "Century Gothic";
+	font:0.7em "Raleway;
 	padding: 0;
 	margin: 0;
 	background-color: #eee;
 	border: 1px solid #ccc;
 	box-shadow: 0 1px 0 rgba(255,255,255, .9) inset, 0 1px 3px rgba(0,0,0, .1);
 	border-radius: 3px;
-  margin-left:10px;
+    margin-left:10px;
 }
 
 nav a{							
@@ -52,21 +58,24 @@ nav li ul{
 
 nav li:hover ul{
 	display: block;
+
 }
 
 nav li ul li {
-	background-color:#eee;
+	background-color:#eec;
   	border: 1px solid #ccc;
 } 
 
 nav li:hover, a:hover {
-	 background: #e8e8e8;
+	 background: #e4e4c4;
 } 
 
-h1 h2 h3 h4 {
-    font-family: 'Old Standard TT', serif;
-}
 
-p {
-   clear: both; 
+article {
+    clear: both;
+    margin: 2em;
+    padding: 2em;
+    height: 2em;
+    z-index: -1;
+    position: absolute;
 }
