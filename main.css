@@ -1,81 +1,72 @@
-body{
-  background: #c4c7cb;
-  background-image: -webkit-radial-gradient(cover, #FFF,#D1D1D1	);
-  background-image: -moz-radial-gradient(cover, #e8eaec, #a4a8ae);
-  background-image: -o-radial-gradient(cover, #e8eaec, #a4a8ae);
-  background-image: radial-gradient(cover, #e8eaec, #a4a8ae)
+header {
+    position:absolute;
+    width:100%;
+    height:50px;
+    top:0;
+    left:0;
+    background-color: #222;
+    z-index:10;
 }
 
-html{
-  min-height:100%;
-}
 
 h1 {
-    font-family: 'Old Standard TT';
-    font-weight: 900;
-    text-align: center;
-    margin:0.5em;
-    padding:0.5em;
-}
-
-
-nav {
-	height: 0;
-    padding: 0;
-	margin: 0;
-	position: relative;
-}
-
-nav li 	{
-	height: auto;
-	width: 12em;
-	float: left;
-	text-align: center;
-	list-style: none;
-	font:0.7em "Raleway;
-	padding: 0;
-	margin: 0;
-	background-color: #eee;
-	border: 1px solid #ccc;
-	box-shadow: 0 1px 0 rgba(255,255,255, .9) inset, 0 1px 3px rgba(0,0,0, .1);
-	border-radius: 3px;
+    float:left;
+    font-weight: 600;
+    font-family: serif;
+    position:relative;
+    line-height: 12px;
     margin-left:10px;
+    padding-left:10px;
+    color:floralwhite;
+    z-index: 10;
 }
 
-nav a{							
-	padding:13px;
-	text-decoration: none; 
-	color:#333;
-	text-shadow: 0 1px #fff;
-	display: block;
-}
-nav li ul{
-	display: none;
-	height: auto;									
-	margin-left: -11px;
-	padding: 0;
-}				
-
-nav li:hover ul{
-	display: block;
-
+.sidebar{
+    display: inline-block;
+    width:250px;
+    top:50px;
+    left:0;
+    position:absolute;
+    margin:0;
+    padding:0;
+    border:0;
+    background-color: #444;
+    z-index: 2;
+    
 }
 
-nav li ul li {
-	background-color:#eec;
-  	border: 1px solid #ccc;
-} 
-
-nav li:hover, a:hover {
-	 background: #e4e4c4;
-} 
-
-
-article {
-    clear: both;
-    margin: 2em;
-    padding: 2em;
-    height: 2em;
-    z-index: -1;
+.content{
+    left:250px;
+    top:50px;
+    padding:10px;
     position: absolute;
+}
+
+ul {
+    padding: 10px;
+    list-style: none;
+}
+
+li {
+    padding: 2px 5px 2px 5px;
+}
+
+
+a:link {
+    color: #ccc;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ccc;
+    text-decoration: none;    
+}
+a:active {
+    color: #ccc;
+    text-decoration: none;    
+}
+
+a:hover {
+    color: #eee;
+    text-decoration: none;    
 }

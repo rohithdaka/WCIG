@@ -1,71 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Understanding Wireless Communications</title>
-    <meta name="description" content="An interactive guide to understand Antennas, Transmission Lines, RF Transceiver functionality, Modulation, Source and Channel Coding">
-    <meta name="keywords" content="Antennas, Transmission Lines, RF, Transceiver, Modulation, Channel Coding, Source Coding">
-    <meta name="author" content="Rohith Daka">
-    <link rel="stylesheet" href="/main.css">
-</head>
-<body>
-    <header class="primary">
-        <h1>Interactive Guide to Wireless Communications</h1>
-        <nav>
-            <ul>
-                <li><a href="/index.html">Home</a></li>
+    <head>
+        <meta charset="utf-8">
+        <title>Understanding Wireless Communications</title>
+        <meta name="description" content="An interactive guide to understand Antennas, Transmission Lines, RF Transceiver functionality, Modulation, Source and Channel Coding">
+        <meta name="keywords" content="Antennas, Transmission Lines, RF, Transceiver, Modulation, Channel Coding, Source Coding">
+        <meta name="author" content="Rohith Daka">
+        <link rel="stylesheet" href="/main.css">
+    </head>
+    <body>
+        <header>
+            <h1>Wireless Communications Interactive Guide</h1>
+        </header>
+
+        <article class="content">
+            
+            <p>This is test message</p>
+            
+        </article> 
+        <nav class="sidebar">
+            <ul class="menu">
                 <li><a href="/Antenna/index.html">Antennas</a>
-                    <ul>
-                        <li><a href="/Antenna/index.html#SD">Short Dipole</a></li>
+                    <ul class="subMenu1">
+                        <li><a href="/Antenna/index.html#HWD ">Half Wave Dipoles</a></li>
                         <li><a href="/Antenna/index.html#LW">Long Wire</a></li>
-                        <li><a href="/Antenna/index.html#RD">Reflector Dish</a></li>
+                        <li><a href="/Antenna/index.html#PD">Parabolic Reflector Dish</a></li>
                         <li><a href="/Antenna/index.html#PA">Phased Array</a></li>
                     </ul>
                 </li>
                 <li><a href="/TL/">Transmission Lines</a>
-                    <ul>
+                    <ul class="subMenu1">
                         <li><a href="/TL/index.html#Impedance">Impedance</a></li>
                         <li><a href="/TL/index.html#SC">Smith Charts</a></li>
                         <li><a href="/TL/index.html#Types">Types of Transmission Lines</a></li>
                     </ul>
                 </li>
                 <li><a href="/RF/">RF Front End</a>
-                    <ul>
-                        <li><a href="/RF/index.html#Transceiver">Transceiver</a></li>
-                        <li><a href="/RF/index.html#Osc">Oscilator</a></li>
-                        <li><a href="/RF/index.html#PLL">Phase Locked Loop</a></li>
-                        <li><a href="/RF/index.html#Filter">Filter</a></li>
-                        <li><a href="/RF/index.html#PA">Powe Amplifier</a></li>
-                        <li><a href="/RF/index.html#LNA">Low Noise Amplifier</a></li>                        
+                    <ul class="subMenu1">
+                        <li><a href="/RF/index.html#Architecture">Architectures</a>
+                            <ul class="subMenu2">
+                                <li>Direct Convertion</li>
+                                <li>Super Heterodyne</li>
+                            </ul>
+                        </li>
+                        <li><a href="/RF/index.html#Analog">Analog Components</a>
+                            <ul class="subMenu2">
+                                <li>Amplifiers</li>
+                                <li>Mixers</li>
+                                <li>Filter</li>
+                                <li>Oscilattors</li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="/Modulation/">Modulation</a>
-                    <ul>
+                    <ul class="subMenu1">
                         <li><a href="/Modulation/index.html#PSK">PSK</a></li>
                         <li><a href="/Modulation/index.html#QAM">QAM</a></li>                       
                     </ul>
                 </li>
                 <li><a href="/Coding/">Coding</a>
-                    <ul>
-                        <li><a href="/Coding/index.html#Source">Source Coding</a></li>
+                    <ul class="subMenu1">
+                        <li><a href="/Coding/index.html#Source">Source Coding</a></li>  
                         <li><a href="/Coding/index.html#Channel">Channel Coding</a></li>                     
                     </ul>
                 </li>
-            </ul>
-        </nav>
-    </header>
-    <article>
-        <p>Welcome to an Interactive guide to understand the amazing concepts that are used to send our data wirelessly. This site is primarily for those who already have a basic knowledge of high school physics and mathematics. Often times, static diagrams in textbooks are inadequate to visualize what is happening. With amazing developments in web technologies, we are able to finally build a solution that is simple to use to learn the concepts. </p>
-        <p>As you may have already noticed, the navigation bar at the top shows the categories into which the subject is divided. </p>
-        <ul>
-            <li>Antennas: Devices that convert alternating electrical currents of high frequencies into electromagnetic waves and vice-versa</li>
-            <li>Transmission Lines: Structures that are designed to carry those high frequency alternating electrical currents from/to Antennas</li>
-            <li>RF Front End: Circuit blocks that links a Modulated electric current signal to the transmitable electrical current signal (Carrier)</li>
-            <li>Modulation: The process of converting digital transmittable bits into predetermined standard waveforms</li>
-            <li>Coding: The process of removing redundancy in the message bits(Source Coding) and adding error-correction/detection bits (Channel Coding) to generate transmittable digtal bit sequence</li>
-        </ul>
-    
-    </article>
-    
-</body>
+                </ul>
+            </nav>
+            
+
+    </body>
 </html>

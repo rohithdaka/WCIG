@@ -1,0 +1,27 @@
+#LNA {
+	width: 0;
+	height: 0;
+	border-top: 50px solid transparent;
+	border-left: 100px solid white;
+	border-bottom: 50px solid transparent;
+    float: left;
+    position: relative;
+}
+.wire {
+	width: 200px;
+	height: 1px;
+	background: blue;
+    float: left;
+    position: relative;
+}
+
+
+
+#Mixer {
+    width: 100px;
+	height: 100px;
+	background: white;
+	border-radius: 50%;
+    float: left;
+    position: relative;
+}
