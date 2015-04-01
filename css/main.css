@@ -8,6 +8,11 @@ header {
     z-index:10;
 }
 
+footer {
+    bottom:10px;
+    position: absolute;
+}
+
 
 h1 {
     float:left;
@@ -23,7 +28,8 @@ h1 {
 
 .sidebar{
     display: inline-block;
-    width:250px;
+    width:210px;
+    height: 100%;
     top:50px;
     left:0;
     position:absolute;
@@ -40,15 +46,24 @@ h1 {
     top:50px;
     padding:10px;
     position: absolute;
+    height: 100%;
 }
 
 ul {
-    padding: 10px;
+    padding: 5px 0px 0px 10px;
+    margin:0;
+    border:0;
     list-style: none;
 }
 
+p {
+    display: block;
+    text-indent: 1em;
+}
+
+
 li {
-    padding: 2px 5px 2px 5px;
+    padding: 2px 0px 0px 10px;
 }
 
 

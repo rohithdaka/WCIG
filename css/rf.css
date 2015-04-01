@@ -1,0 +1,30 @@
+.axis path,
+.axis line {
+  fill: none;
+  stroke: yellow;
+  shape-rendering: crispEdges;
+}
+.axis text {
+    stroke: yellow;
+    font-size: 10px;
+}
+
+.line {
+  fill: none;
+  stroke: yellow;
+  stroke-width: 1.5px;
+}
+
+#receiverBlock {
+    position: relative;
+    
+}
+
+#spectrumAnalyzer {
+    background: rgba(0,0,0,1);
+    position: relative;
+}
+
+form {
+    display: inline;
+}
