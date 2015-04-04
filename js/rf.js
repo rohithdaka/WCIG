@@ -54,7 +54,7 @@ d3.csv("js/noiseSignal.csv", function(error, data) {
     
     // Scale the range of the data
     x.domain(d3.extent(data, function(d) { return d.freq; }));
-    y.domain([0, 15]);
+    y.domain([0, 18]);
     
     // Add the X Axis
     svg.append("g")
@@ -131,7 +131,13 @@ d3.csv("js/noiseSignal.csv", function(error, data) {
 
         var CFF = +document.getElementById("CF").value;
         var LOF = +document.getElementById("LO").value;
+        
+        document.getElementById("CF_display").innerHTML=CFF;
+        document.getElementById("LO_display").innerHTML=LOF;
+        
         var pie = Math.PI;
+        var lowendFrequency = Math.abs(CFF-LOF);
+        var highendFrequency = CFF + LOF;
         console.log(CFF);
 
         for(i=0; i <=NofSamples;i++){
@@ -148,6 +154,25 @@ d3.csv("js/noiseSignal.csv", function(error, data) {
                 data_lo[i]= 5 + ((Math.random() < 0.5)? data_total[i].magn1 : data_total[i].magn2);
             }
             data_total[i].mag3 = data_lo[i];
+
+            if (i < (lowendFrequency -4) || (i > (lowendFrequency + 4) && i<(highendFrequency -4)) || i > (highendFrequency + 4) ) {
+                data_mixer[i]=0;
+            }else if ( i >= (lowendFrequency -4) && i <= (lowendFrequency +4) ) {
+                data_mixer[i] = 14* Math.sin(pie/2 + (i - lowendFrequency)*pie/8);
+            }else {
+                data_mixer[i] = 14* Math.sin(pie/2 + (i - highendFrequency)*pie/8);
+            }           
+            data_total[i].mag4 = data_mixer[i] + ((Math.random() < 0.5)? data_total[i].magn1 : data_total[i].magn2 ) ;
+            if ( i < 30 ) {
+                data_filter[i]= data_total[i].mag4;
+            }else if (i <60 ){
+                data_filter[i] = ( (30-i)/30 + 1 ) * data_total[i].mag4;
+            }else{
+                data_filter[i] = 0;
+            }
+            
+            data_total[i].mag5 = data_filter[i] + ((Math.random() < 0.5)? data_total[i].magn1 : data_total[i].magn2 );
+
         }
 
 
@@ -158,29 +183,55 @@ d3.csv("js/noiseSignal.csv", function(error, data) {
 
         // Scale the range of the data again 
             x.domain(d3.extent(data_total, function(d) { return d.freq; }));
-            y.domain([0, 15]);
+            y.domain([0, 18]);
 
         // Select the section we want to apply our changes to
             var svg = d3.select("#spectrumAnalyzer").transition();
 
         var selectedProbe = document.getElementsByName("selectedProbe");
         if (selectedProbe[0].checked){
+            document.getElementById("antennaOut").style.fill='green';
+            document.getElementById("amplifierOut").style.fill='white';
+            document.getElementById("mixerOut").style.fill='white';
+            document.getElementById("loOut").style.fill='white';
+            document.getElementById("filterOut").style.fill='white';
+            
             valueline = d3.svg.line()
                 .x(function(d) { return x(d.freq); })
                 .y(function(d) { return y(d.mag1); });
         }else if(selectedProbe[1].checked){
+            document.getElementById("antennaOut").style.fill='white';
+            document.getElementById("amplifierOut").style.fill='green';
+            document.getElementById("mixerOut").style.fill='white';
+            document.getElementById("loOut").style.fill='white';
+            document.getElementById("filterOut").style.fill='white';
             valueline = d3.svg.line()
                 .x(function(d) { return x(d.freq); })
                 .y(function(d) { return y(d.mag2); });
         }else if(selectedProbe[2].checked){
+            document.getElementById("antennaOut").style.fill='white';
+            document.getElementById("amplifierOut").style.fill='white';
+            document.getElementById("mixerOut").style.fill='white';
+            document.getElementById("loOut").style.fill='green';
+            document.getElementById("filterOut").style.fill='white';
             valueline = d3.svg.line()
                 .x(function(d) { return x(d.freq); })
                 .y(function(d) { return y(d.mag3); });        
         }else if(selectedProbe[3].checked){
+            document.getElementById("antennaOut").style.fill='white';
+            document.getElementById("amplifierOut").style.fill='white';
+            document.getElementById("mixerOut").style.fill='green';
+            document.getElementById("loOut").style.fill='white';
+            document.getElementById("filterOut").style.fill='white';
             valueline = d3.svg.line()
                 .x(function(d) { return x(d.freq); })
                 .y(function(d) { return y(d.mag4); });
         }else if(selectedProbe[4].checked){
+            document.getElementById("antennaOut").style.fill='white';
+            document.getElementById("amplifierOut").style.fill='white';
+            document.getElementById("mixerOut").style.fill='white';
+            document.getElementById("loOut").style.fill='white';
+            document.getElementById("filterOut").style.fill='green';
             valueline = d3.svg.line()
                 .x(function(d) { return x(d.freq); })
                 .y(function(d) { return y(d.mag5); });

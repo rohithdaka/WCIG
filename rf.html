@@ -16,10 +16,7 @@
         </header>
         <article class="content">
             <h2>RF Module</h2>
-           <p>RF subsystem is used to translate the message signal from baseband to carrier frequency and vice versa.In its simplest form, the RF block looks like this</p> 
-            <svg id="rfBlock"></svg>
-            <br>
-            <p>Those are an awful lot of blocks that are thrown at you. Don't worry. We shall explore this, one slice at a time.</p>
+           <p>RF subsystem is used to translate the message signal from baseband to carrier frequency and vice versa. </p>
             <p>Let us first, examine the receiver part of the RF block. Go ahead and check the signal at every connection in the spectrum Analyzer below.</p>
             <svg id="receiverBlock" width="500" height="180"> 
                               <polyline
@@ -260,11 +257,16 @@
             <svg id="spectrumAnalyzer"> </svg>
             <br>    
             <p> Now play around by changing the carrier signals, Local Oscilator signal. Pay special attention to the signal at the Mixer output. </p>
-            <form>Carrier Frequency: 
-                <input type="range" id="CF" value="100" min="20" max="180" step="5"> 
+            <form id="cf_slider">Carrier Frequency: 
+                
+                <input type="range" id="CF" value="100" min="30" max="170" step="1">
+                <span id="CF_display">100</span>
             </form>
-            <form>Local Oscilator Frequency: 
-                <input type="range" id="LO" value="100" min="50" max="150" step="10"> 
+            <br>
+            <form id="lof_slider">Local Oscilator Frequency: 
+                
+                <input type="range" id="LO" value="100" min="30" max="170" step="1"> 
+                <span id="LO_display">100</span>
             </form>
         
         <input type="radio" name="selectedProbe" class="selectedProbe" id="antenna_check" value=1 />
@@ -272,6 +274,7 @@
         <input type="radio" name="selectedProbe" class="selectedProbe" id="lo_check" value=3 />
         <input type="radio" name="selectedProbe" class="selectedProbe" id="mixer_check" value=4 />
         <input type="radio" name="selectedProbe" class="selectedProbe" id="filter_check" value=5 />
+    <footer>This site could not be possible without the vast number of amazing people who contributed to the web standards. Special Thanks to Bret Victor for his amazing ideas about such exploratory explainations (or reactive documents) </footer> 
         </article>         
 
         <nav class="sidebar">
@@ -331,6 +334,7 @@
                 </li>
                 </ul>
             </nav>
+        
         <script src="js/rf.js"></script>
     </body>
 </html>

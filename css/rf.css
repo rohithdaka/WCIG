@@ -28,6 +28,7 @@ form {
     display: inline;
 }
 
+
 #receiverBlock polyline,polygon,rect,line,path {
     fill:none;
     stroke-width:1;
@@ -47,5 +48,9 @@ form {
     stroke-linecap:butt;
     stroke-linejoin:miter;
     stroke-opacity:1;
+}
+
+#receiverBlock circle:hover {
+    fill: yellow;
 }
 
