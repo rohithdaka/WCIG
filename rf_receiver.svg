@@ -250,4 +250,46 @@ text {font-family:sans-serif;fill:#000;}
          x="247.7108"
          y="21.587719"
          style="fill:none;stroke:#000000;stroke-width:1" /></flowRegion><flowPara
-       id="flowPara3436" /></flowRoot></svg>
+       id="flowPara3436" /></flowRoot>  <ellipse
+     style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.92437679px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path3378"
+     cy="52.483849"
+     cx="61.622639"
+     rx="5.5289378"
+     ry="4.9188128" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="61.622635"
+     y="54.314228"
+     id="text4182"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4184"
+       x="61.622635"
+       y="54.314228" /></text>
+  <circle
+     style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.92437679px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path3378-4"
+     cy="50.04335"
+     cx="178.76665"
+     r="6" />
+  <circle
+     style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.92437679px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path3378-6"
+     cy="98.853363"
+     cx="250.15131"
+     r="6" />
+  <circle
+     style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.92437679px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path3378-61"
+     cy="72.617981"
+     cx="296.52078"
+     r="6" />
+  <circle
+     style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.92437679px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path3378-8"
+     cy="72.007851"
+     cx="409.39395"
+     r="6" />
+</svg>

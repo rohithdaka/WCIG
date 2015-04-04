@@ -17,7 +17,6 @@
 
 #receiverBlock {
     position: relative;
-    
 }
 
 #spectrumAnalyzer {
@@ -28,3 +27,25 @@
 form {
     display: inline;
 }
+
+#receiverBlock polyline,polygon,rect,line,path {
+    fill:none;
+    stroke-width:1;
+    stroke:#000;
+}
+#receiverBlock text {
+    font-family:sans-serif;
+    fill:#000;
+}
+
+#receiverBlock circle {
+    fill:#ffffff;
+    fill-opacity:1;
+    fill-rule:evenodd;
+    stroke:#000000;
+    stroke-width:0.92437679px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+}
+
