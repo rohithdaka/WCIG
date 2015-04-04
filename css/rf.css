@@ -54,3 +54,7 @@ form {
     fill: yellow;
 }
 
+.selectedProbe {
+    left: -2000px;
+    position: absolute;
+}
