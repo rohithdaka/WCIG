@@ -12,7 +12,6 @@ header {
 header h1 {
     font-weight: 600;
     font-family: serif;
-    position:relative;
     line-height: 12px;
     margin-left:10px;
     padding-left:10px;
@@ -22,7 +21,6 @@ header h1 {
 
 header aside { 
     font-family: serif;
-    position:relative;
     color:floralwhite;
     float:right;
     margin:10px;
@@ -30,29 +28,53 @@ header aside {
     
 }
 
+header:before,
+header:after { 
+    content:"";
+    display:table;
+}
+
+header:after{
+    clear:both;
+}
+
+article.content:before,
+article.content:after { 
+    content:"";
+    display:table;
+}
+
+article.content:after{
+    clear:both;
+}
+
+article.content {
+    clear:both;
+    *zoom:1;
+}
 
 .content{
     top:50px;
     padding:10px;
+    padding-bottom:100px;
     position: relative;
     width:100%;
+    min-height:100%;
     min-width: 900px;
 }
 
 .info {
     width: 50%;
     min-width: 450px;
-    float:left;
     margin:5px;
     padding:5px;
-    position:relative;
+    float:left;
 }
 
 .notes{
     width:30%;
     min-width: 300px;
     float:left;
-    position:relative;
     margin:5px;
     padding:5px;
     font-size:0.7em;
@@ -70,8 +92,6 @@ p {
     text-indent: 1em;
 }
 
-
-
 li {
     padding: 2px 0px 0px 10px;
     color: coral;
@@ -79,26 +99,20 @@ li {
 
 
 footer {
-    clear:both;
-    position:relative;
     width:100%;
     min-width: 900px;
     background-color: #222;
-    bottom:0;
-    left:0;
-    margin:0;
-    padding:0;
-    border:0;
+	height:200px;
 }
 
 section.navmenu {
     float:left;
+    position:relative;
     width: 17%;
     min-width: 180px;
     padding:5px;
     margin: 5px;
 }
-
 
 
 a:link {
