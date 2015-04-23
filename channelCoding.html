@@ -1,17 +1,77 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Wireless Communications Primer</title>
-        <meta name="description" content="An interactive primer to understand the building blocks of wireless communications: Antennas, Transmission Lines, RF Front End, Modulation and Channel Coding">
-        <meta name="keywords" content="Antennas, Transmission Lines, RF, Modulation, Channel Coding">
-        <meta name="author" content="Rohith Daka">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-        <script src="//cdn.jsdelivr.net/mithril/0.1.34/mithril.min.js"></script>
-    </head>
-    <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mithril/0.1.34/mithril.js"></script>
+
+<script>
+var hD = {};
+var cE ={};
+
+
     
-    </body>
+layout = function(header,body) {
+    return m("html", [
+        m("head", header),
+        m("body", body)
+        ]);
+};
+    
+var header = function(){
+    return [
+            m("title","Wireless Communications Primer"),
+            m("meta",{name: "author", content: "Rohith Daka"}),
+            m("meta",{name: "keywords", content: "Channel Coding"})
+        ];
+
+};
+             
+var body = function () {
+   return  [
+            m("input", "Blah"),
+            m("button", "Generate"),
+            m("table", [
+                     m("tr", [
+                        m("td", [
+                            m("p", "Wassup?")
+                        ]),
+                        m("td", "Blah")
+                    ])
+            ])
+            ];
+    
+    };
+    
+var body2 = function () {
+   return  [
+            m("input", "Yeah Right"),
+            m("button", "Add"),
+            m("table", [
+                     m("tr", [
+                        m("td", [
+                            m("h1", "Nothing?")
+                        ]),
+                        m("td", "Idiot")
+                    ])
+            ])
+            ];
+    
+    };
+    
+var mixinLayout = function(layout, header, body) {
+    return function() {
+        return layout(header(), body());
+    };
+};
+    
+hD.view = mixinLayout(layout,header,body);
+cE.view = mixinLayout(layout,header,body2);
+
+
+//initialize the application
+m.route(document, "/foo", {
+    "/foo": hD,
+    "/bar": cE
+});
+    
+       </script>
 
     
 </html>
