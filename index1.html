@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mithril/0.2.0/mithril.js"></script>
+<script>
+    var layout = function(siteHeader,pageContent,navigation) {
+        return m("html", [
+            m("head", siteHeader),
+            m("body", [
+                    m("section#content", pageContent),
+                    m("nav", navigation)
+                ]) ]); 
+    };   
+    var siteHeader = function(){
+        return [
+            m("title","Wireless Communications Primer"),
+            m("meta",{name: "author", content: "Rohith Daka"}),
+            m("meta",{name: "keywords", content: "Channel Coding, Modulation, RF Front End, Antenna"}),
+            m("meta",{name: "description", content: "An interactive primer to help improve the intuition of the building blocks of wireless communications"}),
+            m("link",{rel: "stylesheet", href: "wcp.css"})
+        ];
+    };    
+    var transmitChain = [
+        {'name': "Channel Encoding", 'url': '/channelEncoding' },
+        {'name': "Modulation", 'url': '/modulation' },
+        {'name': "RF Transmitter", 'url': '/rfTransmiter' },
+        {'name': "Transmit Antenna", 'url': '/transmitAntenna' }
+        ];   
+    var receiveChain = [
+        
+        {'name': "Receive Antenna", 'url': '/receiveAntenna' },
+        {'name': "RF Receiver", 'url': '/rfReceiver' },
+        {'name': "Demodulation", 'url': '/demodulation' },
+        {'name': "Channel Decoding", 'url': '/channelDecoding' }
+
+    ];   
+    var navigation = function () {
+        return m("table",[ 
+            m("tr",[ transmitChain.map(function(topic,index) { return m("td", m("a",{href: topic.url},topic.name)); }) ]),
+            m("tr",[ receiveChain.map( function(topic,index){ return m("td", m("a",{href: topic.url},topic.name)); }).reverse() ])
+            ]);
+    }; 
+    var pageContent = function (){};
+    var mixinLayout = function(layout, siteHeader, pageContent, navigation) {
+        return function() {
+            return layout(siteHeader(), pageContent(),navigation());
+        };
+    };
+    
+    
+    m.mount(document,{view: mixinLayout(layout,siteHeader,pageContent,navigation)}); 
+</script>
