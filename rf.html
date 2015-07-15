@@ -16,8 +16,17 @@
         </header>
         <article class="content">
             <h2>RF Module</h2>
-           <p>RF subsystem is used to translate the message signal from baseband to carrier frequency and vice versa. </p>
-            <p>Let us first, examine the receiver part of the RF block. Go ahead and check the signal at every connection in the spectrum Analyzer below.</p>
+           <p>You may have already been familiar with information being represented in bits (i.e 1s and 0s). But have you ever wondered what exactly do they mean by 1s and 0s? How are they represented in the transistor? How are they transferred from one place to another? When you notice the data rates mentioned like 2 Giga bits per second, How do you think that happens?  </p>
+            <p>There are various ways to represent 1s and 0s but there is only one medium which can be used to transfer any data. Electro Magnetic Wave. Visible light we experience everyday is an electro-magnetic wave. So the predominant task for any Communications Engineer: is to convert 'the data' into an Electro-Magnetic Wave that can safely transmit the data. </p>
+            <p>We shall explore Electro-Magnetic Waves in another chapter. This chapter is understand how the conversion happens. </p>
+            <p>Let us first, examine the receiver part of the RF block. The spectrum analyser shows the frequency domain representation of the signal. If you probe the signals at each block by clicking in the circle. </p>
+            <p>A brief description of each block </p>
+            <ol>
+                <li>Amplifier: It amplifies the received signal to a descent level. Such amplification would help the later blocks to decode the message.</li>
+                <li>Mixer: This is the crucial part of the RF subsystem. This converts the high frequency carrier signal into a low frequency base band signal. (signal at a very low frequency) </li>
+                <li>Local Oscilator: Every system needs timing information. An oscilator provides the necessary clock to decode the message, Oscilator frequency must match the carrier frequency for a good baseband signal. </li>
+                <li>Filter: Mixing signals will not only provide baseband signal but also many unwanted signals. A low pass filter helps in reducing the undesired signals that is frankly a nuisance for the system.</li>
+            </ol>
             <svg id="receiverBlock" width="500" height="180"> 
                               <polyline
                  points="0,0 10,19 20,0"
@@ -256,7 +265,7 @@
             </svg>
             <svg id="spectrumAnalyzer"> </svg>
             <br>    
-            <p> Now play around by changing the carrier signals, Local Oscilator signal. Pay special attention to the signal at the Mixer output. </p>
+            <p> To get a rudimentary idea of how the entire system works, play around with Local Oscilator frequency and Carrier frequency. Probe the circles near each block to view the signal. Pay special attention to the signal at the Mixer output. Ideally, there should be signal at low or zero frequency. Horizontal axis is in MHz and vertical is amplitude in milliWatts.</p>
             <form id="cf_slider">Carrier Frequency: 
                 
                 <input type="range" id="CF" value="100" min="30" max="170" step="1">
@@ -274,8 +283,9 @@
         <input type="radio" name="selectedProbe" class="selectedProbe" id="lo_check" value=3 />
         <input type="radio" name="selectedProbe" class="selectedProbe" id="mixer_check" value=4 />
         <input type="radio" name="selectedProbe" class="selectedProbe" id="filter_check" value=5 />
-    <footer>This site could not be possible without the vast number of amazing people who contributed to the web standards. Special Thanks to Bret Victor for his amazing ideas about such exploratory explainations (or reactive documents) </footer> 
+<!--    <footer>This site could not be possible without the vast number of amazing people who contributed to the web standards. Special Thanks to Bret Victor for his amazing ideas about such exploratory explainations (or reactive documents) </footer> -->
         </article>         
+<!--
 
         <nav class="sidebar">
             <ul class="menu">
@@ -335,6 +345,7 @@
                 </ul>
             </nav>
         
+-->
         <script src="js/rf.js"></script>
     </body>
 </html>
