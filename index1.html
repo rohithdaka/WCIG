@@ -37,14 +37,35 @@
             m("tr",[ transmitChain.map(function(topic,index) { return m("td", m("a",{href: topic.url},topic.name)); }) ]),
             m("tr",[ receiveChain.map( function(topic,index){ return m("td", m("a",{href: topic.url},topic.name)); }).reverse() ])
             ]);
-    }; 
-    var pageContent = function (){};
+    };     
     var mixinLayout = function(layout, siteHeader, pageContent, navigation) {
         return function() {
             return layout(siteHeader(), pageContent(),navigation());
         };
     };
     
+    var introduction = {
+        model: function() {},
+        controller: function(){},
+        pageContent: function(){
+            return m("p","Introduction");
+        },
+        view: mixinLayout(layout,siteHeader,this.pageContent,navigation)
+    };
     
-    m.mount(document,{view: mixinLayout(layout,siteHeader,pageContent,navigation)}); 
+    var channelEncoding = {
+        model: function() {},
+        controller: function(){},
+        pageContent: function(){
+            return m("p","Channel Encoding");
+        },
+        view: mixinLayout(layout,siteHeader,this.pageContent,navigation)
+    };
+    
+    
+    
+    m.route(document,"/",{
+        "/" : introduction,
+        "/channelEncoding" : channelEncoding
+    }); 
 </script>
